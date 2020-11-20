@@ -1,5 +1,7 @@
 import React from 'react';
+import { Carousel } from 'react-bootstrap';
 import './Product.scss';
+
 
 function Product(props) {
   const { id, name, links, price, priceRange, thumbnail, hero, images } = props;
@@ -14,11 +16,14 @@ function Product(props) {
   // get product price or priceRange
   let displayPrice = price ? formatter.format(price.selling) : `${formatter.format(priceRange.selling.high)}-${formatter.format(priceRange.selling.low)}`;
 
-  // get carousel images
-  const imageCarousel = images
-    .map(productImage => {
-      return <img src={productImage.href} alt={name}></img>
+  // get samllest carousel image size
+  let smallestCarouselImage = 0;
+  images.forEach(image => {
+    if ((smallestCarouselImage === 0) || (image.width < smallestCarouselImage)) {
+      smallestCarouselImage = image.width;
+    }
   });
+  console.log(smallestCarouselImage);
 
   return (
     <li className="product">
@@ -26,7 +31,13 @@ function Product(props) {
         <div>{name}</div>
         <div>{displayPrice}</div>
 
-        {imageCarousel}
+        <Carousel className="test" style={{width:"100%", maxWidth:`${smallestCarouselImage}px`}}>
+          {images.map(image => {
+            return <Carousel.Item>
+              <img src={image.href} alt="product"/>
+            </Carousel.Item>
+          })}
+        </Carousel>
     </li>
   );
 }
