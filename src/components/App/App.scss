@@ -1,3 +1,163 @@
+// [00] TABLE OF CONTENTS ==========================================================================
+// [01] PRIORITY IMPORTS
+// [02] FUNCTIONS, VARIBALES, MIXINS
+// [03] IMPORTS
+// [04] STYLES
+
+
+
+// [01] PRIORITY IMPORTS ===========================================================================
+@import "../../../node_modules/bootstrap/scss/functions";
+
+
+
+// [02] FUNCTIONS, VARIBALES, MIXINS ===============================================================
+// FUNCTIONS
+@function grid-breakpoint($key: xs) {
+  @return map-get($grid-breakpoints, $key);
+}
+@function font-weight($key: "thin") {
+  @return map-get($font-weights, $key);
+}
+
+// MAP VARIABLES
+$white:    #FFF;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+$brown:    #6B4200;
+$orange:   #FD7E14;
+$yellow:   #FFC107;
+$green:    #28A745;
+$teal:     #20C997;
+$cyan:     #17A2B8;
+$blue:     #007BFF;
+$indigo:   #6610F2;
+$purple:   #6F42C1;
+$pink:     #E83E8C;
+$red:      #DC3545;
+
+$primary:   $brown;
+$secondary: $gray-600;
+$success:   $green;
+$info:      $cyan;
+$warning:   $yellow;
+$danger:    $red;
+$light:     $gray-100;
+$dark:      $gray-800;
+
+// MAPS
+$grays: (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+);
+$colors: (
+    "white": $white,
+    "black": $black,
+    "brown": $brown,
+    "gray":  $gray-900
+);
+$theme-colors: (
+    "primary":   $primary,
+    "secondary": $secondary,
+    "success":   $success,
+    "info":      $info,
+    "warning":   $warning,
+    "danger":    $danger,
+    "light":     $light,
+    "dark":      $dark
+);
+$font-weights: (
+    "thin":       100,
+    "extralight": 200,
+    "light":      300,
+    "normal":     400,
+    "medium":     500,
+    "semibold":   600,
+    "bold":       700,
+    "extrabold":  800,
+    "heavy":      900
+);
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+// MISC
+$container-fluid-max-width: 1140px;
+
+
+
+// [03] IMPORTS ====================================================================================
+//@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/root";
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/type";
+
+@import "../../../node_modules/bootstrap/scss/grid";
+
+@import "../../../node_modules/bootstrap/scss/buttons";
+@import "../../../node_modules/bootstrap/scss/transitions";
+
+@import "../../../node_modules/bootstrap/scss/card";
+
+@import "../../../node_modules/bootstrap/scss/modal";
+
+@import "../../../node_modules/bootstrap/scss/carousel";
+
+@import "../../../node_modules/bootstrap/scss/utilities";
+
+
+
+// [04] STYLES =====================================================================================
+
+.carousel {
+  display: inline-block;
+  width: 100%;
+  border: 2px solid lime;
+  .carousel-indicators {
+    li {
+      background-color: hsla(0, 0%, 25%, .3);
+    }
+  }
+  .carousel-control-next {
+    background: linear-gradient(to right, rgba(125,185,232,0) 0%,rgba(0,0,0,0.1) 100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .carousel-control-prev {
+    background: linear-gradient(to left, rgba(125,185,232,0) 0%,rgba(0,0,0,0.1) 100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// debug
 .app {
   border: 2px solid red;
 }
