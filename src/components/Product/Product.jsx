@@ -10,6 +10,12 @@ function Product(props) {
     minimumFractionDigits: 2
   });
 
+  // character format
+  function formatStr(str){
+    return str.replace(/&amp;/g, "&");
+  }
+  let displayName = formatStr(name);
+
   // get product price or priceRange
   let displayPrice = price ? formatter.format(price.selling) : `${formatter.format(priceRange.selling.high)}-${formatter.format(priceRange.selling.low)}`;
 
@@ -27,7 +33,7 @@ function Product(props) {
           })}
         />
         <div className="card-body pt-0">
-          <h5 className="card-title">{name}</h5>
+          <h5 className="card-title">{displayName}</h5>
           <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis aliquam fauci sit amet.</p>
           {/* <Button variant="primary">Go somewhere</Button> */}
           <p className="displayPrice">{displayPrice}</p>

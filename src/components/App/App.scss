@@ -44,6 +44,9 @@ $purple:   #6F42C1;
 $pink:     #E83E8C;
 $red:      #DC3545;
 
+$cc-shell:  #F8F8F8;
+$cc-brown1: #866347;
+
 $primary:   $brown;
 $secondary: $gray-600;
 $success:   $green;
@@ -115,9 +118,13 @@ $container-fluid-max-width: 1080px;
 
 @import "../../../node_modules/bootstrap/scss/grid";
 
+@import "../../../node_modules/bootstrap/scss/forms";
+
 @import "../../../node_modules/bootstrap/scss/buttons";
 @import "../../../node_modules/bootstrap/scss/transitions";
 
+@import "../../../node_modules/bootstrap/scss/nav";
+@import "../../../node_modules/bootstrap/scss/navbar";
 @import "../../../node_modules/bootstrap/scss/card";
 
 @import "../../../node_modules/bootstrap/scss/modal";
@@ -131,15 +138,35 @@ $container-fluid-max-width: 1080px;
 @import "../ProductModal/ProductModal";
 
 // [04] STYLES =====================================================================================
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
 .container-fluid {
   max-width: $container-fluid-max-width;
 }
 
-// debug
-.app {
-  border: 2px solid red;
+.navbar {
+  background-color: $cc-shell;
 }
-.products {
-  border: 2px solid purple;
+.footer {
+  font-size: 11px;
+  color: $dark;
+  background-color: $cc-shell;
+  text-align: center;
+  .fakeLink {
+    cursor: pointer;
+    color: $cc-brown1;
+    padding-bottom: 1px;
+    border-bottom: 1px solid;
+    margin: 0 4px;
+  }
 }
