@@ -12,7 +12,9 @@ function App() {
 
   return (
     <div className="app">
-      <Products setModal={setModal} />
+      <div className="container-fluid">
+        <Products setModal={setModal} />
+      </div>
       <ProductModal
         modal={modal}
         show={modal.modalShow}

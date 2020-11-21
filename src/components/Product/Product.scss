@@ -1,3 +1,11 @@
 .product {
-    text-align: center;
+    padding: 15px;
+    .card {
+        border: none;
+        // height: 100%;
+        // min-height: 100%;
+    }
+    .card-img-top {
+        cursor: pointer;
+    }
 }

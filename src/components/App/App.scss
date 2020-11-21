@@ -101,7 +101,7 @@ $grid-breakpoints: (
 );
 
 // MISC
-$container-fluid-max-width: 1140px;
+$container-fluid-max-width: 1080px;
 
 
 
@@ -129,6 +129,10 @@ $container-fluid-max-width: 1140px;
 
 
 // [04] STYLES =====================================================================================
+
+.container-fluid {
+  max-width: $container-fluid-max-width;
+}
 
 .carousel {
   display: inline-block;
@@ -164,6 +168,6 @@ $container-fluid-max-width: 1140px;
 .products {
   border: 2px solid purple;
 }
-.product {
-  border: 2px solid cyan;
-}
+// .product {
+//   border: 2px solid cyan;
+// }

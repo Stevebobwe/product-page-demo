@@ -11,6 +11,7 @@ function ProductModal(props) {
   console.log(modal.modalData);
   console.log(modal.modalData.images)
 
+  
   let smallestCarouselImage = 0;
   let modalCarousel = <div></div>
   if (modal.modalData.images) {

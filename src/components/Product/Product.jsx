@@ -1,8 +1,5 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
 import './Product.scss';
-
-import { Button } from 'react-bootstrap';
 
 function Product(props) {
   const { id, name, links, price, priceRange, thumbnail, hero, images, setModalShow, setModal } = props;
@@ -18,23 +15,25 @@ function Product(props) {
   let displayPrice = price ? formatter.format(price.selling) : `${formatter.format(priceRange.selling.high)}-${formatter.format(priceRange.selling.low)}`;
 
   return (
-    <li className="product">
-      <img src={hero.href} alt={name} onClick={() => setModal({
-          modalShow: true,
-          modalId: id,
-          modalData: props
-        })}
-      />
-      <div>{name}</div>
-      <div>{displayPrice}</div>
-
-      {/* <Button variant="primary" onClick={() => setModal({
-          modalShow: true,
-          modalId: id,
-          modalData: props
-        })}>
-        setModal
-      </Button> */}
+    <li className="product col-lg-4 col-md-6">
+      <div className="card">
+        <img
+          className="card-img-top"
+          src={hero.href}
+          alt={name}
+          onClick={() => setModal({
+            modalShow: true,
+            modalId: id,
+            modalData: props
+          })}
+        />
+        <div className="card-body pt-0">
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis aliquam fauci sit amet.</p>
+          {/* <Button variant="primary">Go somewhere</Button> */}
+          <p>{displayPrice}</p>
+        </div>
+      </div>
     </li>
   );
 }

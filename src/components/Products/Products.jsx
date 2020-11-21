@@ -3,8 +3,6 @@ import './Products.scss';
 import ProductsData from '../../ProductsData';
 import Product from '../Product/Product';
 
-import { Button } from 'react-bootstrap';
-
 function Products(props) {
   const { setModalShow, setModal } = props;
 
@@ -14,7 +12,7 @@ function Products(props) {
   // name filter
   // const [byNameFilter, setByNameFilter] = useState('');
 
-  // // remove items whose names do not contain the input
+  // // remove products whose names do not contain the input
   // if (byNameFilter) {
   //   const byNameFilterFn = product => {
   //     return product.name.toLowerCase().indexOf(byNameFilter.toLowerCase()) >= 0;
@@ -24,28 +22,22 @@ function Products(props) {
 
   // // additional filters here
   
-  // // apply filters to filteredUniqueItems
+  // // apply filters to filteredProducts
   // filterFnsToApply.forEach(filterFn => {
   //   products = products.filter(filterFn);
   // });
 
-  // create <UniqueItem> for each remaining item filteredUniqueItems
+  // create <Product> for each remaining product in filteredProducts
   const filteredProducts = products
     .map(product => {
       product.key = product.id;
-      //console.log(product);
       return <Product {...product} setModalShow={() => {setModalShow(true)}} setModal={setModal}/>;
   });
 
   return (
-    <div>
-      <ul className="products">
-        {filteredProducts}
-      </ul>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal products
-      </Button>
-    </div>
+    <ul className="products row">
+      {filteredProducts}
+    </ul>
   );
 }
 
