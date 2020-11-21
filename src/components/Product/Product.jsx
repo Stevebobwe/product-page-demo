@@ -31,7 +31,7 @@ function Product(props) {
           <h5 className="card-title">{name}</h5>
           <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis aliquam fauci sit amet.</p>
           {/* <Button variant="primary">Go somewhere</Button> */}
-          <p>{displayPrice}</p>
+          <p className="displayPrice">{displayPrice}</p>
         </div>
       </div>
     </li>

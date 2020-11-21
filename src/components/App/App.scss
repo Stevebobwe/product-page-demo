@@ -126,39 +126,14 @@ $container-fluid-max-width: 1080px;
 
 @import "../../../node_modules/bootstrap/scss/utilities";
 
-
+@import "../Products/Products";
+@import "../Product/Product";
+@import "../ProductModal/ProductModal";
 
 // [04] STYLES =====================================================================================
 
 .container-fluid {
   max-width: $container-fluid-max-width;
-}
-
-.carousel {
-  display: inline-block;
-  width: 100%;
-  border: 2px solid lime;
-  .carousel-indicators {
-    li {
-      background-color: hsla(0, 0%, 25%, .3);
-    }
-  }
-  .carousel-control-next {
-    background: linear-gradient(to right, rgba(125,185,232,0) 0%,rgba(0,0,0,0.1) 100%);
-    opacity: 0;
-    transition: all 0.3s ease;
-    &:hover {
-      opacity: 1;
-    }
-  }
-  .carousel-control-prev {
-    background: linear-gradient(to left, rgba(125,185,232,0) 0%,rgba(0,0,0,0.1) 100%);
-    opacity: 0;
-    transition: all 0.3s ease;
-    &:hover {
-      opacity: 1;
-    }
-  }
 }
 
 // debug
@@ -168,6 +143,3 @@ $container-fluid-max-width: 1080px;
 .products {
   border: 2px solid purple;
 }
-// .product {
-//   border: 2px solid cyan;
-// }
