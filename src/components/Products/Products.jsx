@@ -3,8 +3,11 @@ import './Products.scss';
 import ProductsData from '../../ProductsData';
 import Product from '../Product/Product';
 
+import { Button } from 'react-bootstrap';
 
-function Products() {
+function Products(props) {
+  const { setModalShow, setModal } = props;
+
   let products = ProductsData.groups;
   //let filterFnsToApply = [];
 
@@ -31,7 +34,7 @@ function Products() {
     .map(product => {
       product.key = product.id;
       //console.log(product);
-      return <Product {...product}/>;
+      return <Product {...product} setModalShow={() => {setModalShow(true)}} setModal={setModal}/>;
   });
 
   return (
@@ -39,6 +42,9 @@ function Products() {
       <ul className="products">
         {filteredProducts}
       </ul>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        Launch vertically centered modal products
+      </Button>
     </div>
   );
 }
