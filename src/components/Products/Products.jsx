@@ -4,7 +4,7 @@ import ProductsData from '../../ProductsData';
 import Product from '../Product/Product';
 
 function Products(props) {
-  const { setModalShow, setModal } = props;
+  const { setModal } = props;
 
   let products = ProductsData.groups;
   //let filterFnsToApply = [];
@@ -31,7 +31,7 @@ function Products(props) {
   const filteredProducts = products
     .map(product => {
       product.key = product.id;
-      return <Product {...product} setModalShow={() => {setModalShow(true)}} setModal={setModal}/>;
+      return <Product {...product} setModal={setModal}/>;
   });
 
   return (

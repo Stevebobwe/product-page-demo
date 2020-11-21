@@ -2,8 +2,7 @@ import React from 'react';
 import './Product.scss';
 
 function Product(props) {
-  const { id, name, links, price, priceRange, thumbnail, hero, images, setModalShow, setModal } = props;
-  console.log('debug1');
+  const { id, name, price, priceRange, hero, setModal } = props;
   // usd formatter
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
